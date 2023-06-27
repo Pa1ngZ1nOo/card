@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Oswald', sans-serif; */
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #83a4d4;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            width: 1000px;
+            padding: 35px;
+            border-radius: 50px 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            animation: box 2s;
+        }        
+
+        .card-img {
+            width: 30%;
+            margin-right: 50px;
+            animation: toRight 2s;
+            border-radius: 50px 15px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            transition: 0.5s;
+        }
+
+        .card-body {
+            width: 600px;
+        }
+
+        .card-header {
+            font-size: 40px;
+            margin-bottom: 10px;
+            animation: toLeft 2s;
+            color: #fff;
+        }
+
+        .card-text {
+            font-size: 30px;
+            animation: toLeft 2s;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #007bff;
+            text-decoration: none;
+            animation: fade 3s;
+        }
+
+        .card:hover .card-img {
+            transform: rotate(-5deg) scale(1.1);
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+
+        @keyframes toRight {
+            0% {
+                transform: translateX(-300px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes toLeft {
+            0% {
+                transform: translateX(300px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes box {
+            0% {
+                transform: translateY(-300px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="./img/IMG_20201231_164737.jpg" alt="" class="card-img">
+        <div class="card-body">
+            <h1 class="card-header">Paing Zin Oo</h1>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam itaque molestias architecto molestiae illo labore mollitia cupiditate hic sequi repellendus rerum doloremque quibusdam velit est, tempore vel placeat dolorem? Adipisci.</p>
+            <a href="#" class="card-btn">Call Now</a>
+        </div>
+    </div>
+</body>
+</html>
